@@ -11,19 +11,21 @@ export default class ThemeContextProvider extends Component {
 
   // ---- this state will be stored in the context 
   state = {
-    isLightTheme: true,
+    isLightTheme: false,
     light: {
       text: "black",
       background: "white"
     },
     dark: {
-      text: "black",
-      background: "white"
+      text: "white",
+      background: "black"
     }
   }
 
   render() {
     return (
+
+      // through the themeContext any component(we want) can access this value 
       < ThemeContext.Provider value={{ ...this.state }} >
         {this.props.children}
       </ThemeContext.Provider>
