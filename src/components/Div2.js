@@ -13,9 +13,11 @@ export default class Div2 extends Component {
         {firstContext => {
           const theme = firstContext.isLightTheme ? firstContext.light : firstContext.dark;
           console.log(firstContext)
+          // first return
           return (
             <UserContext.Consumer>
               {secondContext => {
+                // second return
                 return (
                   <div style={{ backgroundColor: theme.background, color: theme.text, border: "2px solid black" }}>
                     <h1>{secondContext.user}</h1>
