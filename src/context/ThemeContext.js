@@ -11,7 +11,7 @@ export default class ThemeContextProvider extends Component {
 
   // ---- this state will be stored in the context 
   state = {
-    isLightTheme: false,
+    isLightTheme: false,    // we need a function to chage this value
     light: {
       text: "black",
       background: "white"
@@ -22,11 +22,19 @@ export default class ThemeContextProvider extends Component {
     }
   }
 
+  changeTheme() {
+    console.log({ before: this.state.isLightTheme });
+    this.setState(state => !state.isLightTheme);
+    console.log({ after: this.state.isLightTheme });
+
+  }
+
+
   render() {
     return (
 
       // through the themeContext any component(we want) can access this value 
-      < ThemeContext.Provider value={{ ...this.state }} >
+      < ThemeContext.Provider value={{ ...this.state, themeToggle: this.changeTheme }} >
         {this.props.children}
       </ThemeContext.Provider>
 
