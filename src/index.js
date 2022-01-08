@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ThemeContextProvider from './context/ThemeContext';
+import UserContextProvider from './context/UserContext';
 
 
 
@@ -12,7 +13,9 @@ ReactDOM.render(
   <React.StrictMode>
     {/* we have to wrap everything or some part of the app in the context */}
     <ThemeContextProvider>
-      <App />
+      <UserContextProvider>
+        <App />
+      </UserContextProvider>
     </ThemeContextProvider>
   </React.StrictMode>,
   document.getElementById('root')

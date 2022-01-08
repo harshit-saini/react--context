@@ -1,5 +1,6 @@
 import './App.css';
 import Div from './components/Div'
+import Div2 from './components/Div2';
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <>
       <div>Harshit saini</div>
       <Div />
+      <Div2 />
     </>
   );
 }
