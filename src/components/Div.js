@@ -25,13 +25,14 @@ class Div extends Component {
 
 
   render() {
-    const { isLightTheme, light, dark } = this.context;
+    const { isLightTheme, light, dark, themeToggle } = this.context;
 
     const theme = isLightTheme ? light : dark;
 
     return (
       <div style={{ backgroundColor: theme.background, color: theme.text, ...divStyle }}>
         <h1>Harshit saini</h1>
+        <button onClick={themeToggle}>Change Theme</button>
       </div>
 
     )
